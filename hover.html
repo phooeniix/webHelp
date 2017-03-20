@@ -13,7 +13,11 @@
   }
   tr:hover{
     background-color: #ffa;
-
+  }
+  td:hover{
+    background-color: #DDD !important;
+    color: #000;
+    font-weight: 900;
   }
 
   td:hover::after,
@@ -21,11 +25,17 @@
       background-color: #ffa;
       content: '\00a0';
       height: 10000px;
+      font-weight: 900;
       left: 0;
       position: absolute;
       top: -5000px;
       width: 100%;
       z-index: -1;
+  }
+  td::hover{
+    background:#333;
+    color: #fff;
+    font-weight: 900;
   }
 
 
@@ -53,7 +63,7 @@
           <td>Column content</td>
           <td>Column content</td>
         </tr>
-        <tr >
+        <tr class="success">
           <th scope="row">3</th>
           <td>Column content</td>
           <td>Column content</td>
@@ -109,10 +119,11 @@
               };
 
               var style = '<style>'
+                  + 'td { padding: 0 !important; }'
                   + 'td:hover::before, td:hover::after { background-color: transparent !important; }'
                   + '</style>';
               document.head.insertAdjacentHTML( 'beforeEnd', style );
-      };
+          };
       hoverTable();
 
     </script>
